@@ -1,8 +1,9 @@
 body{
     background: linear-gradient(to bottom, #ff0000, #ff0000);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    height: 100vh;
+    height: 100%;
     margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
