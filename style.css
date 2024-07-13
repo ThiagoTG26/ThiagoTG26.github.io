@@ -11,7 +11,7 @@ body{
     body{
         background: linear-gradient(to bottom, #1d202e, #6671a7);
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        height: 100vh;
+        height: 100%;
         margin: 0;
         padding: 0;
         overflow: hidden;
