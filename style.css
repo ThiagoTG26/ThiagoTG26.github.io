@@ -1,5 +1,6 @@
 @media (max-aspect-ratio: 1919 / 1080) {
     body{
+        overflow: auto;
         background-color: #1e1e2b;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         scale: 1;
@@ -105,6 +106,7 @@
 
 @media (min-aspect-ratio: 1920 / 1080) {
     body{
+        overflow: auto;
         scale: 1;
         height: 100vh;
         background: linear-gradient(to bottom, #141925, #4d516b);
