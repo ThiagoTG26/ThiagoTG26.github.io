@@ -2,7 +2,6 @@
     body{
         background-color: #1e1e2b;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        overflow: hidden;
         scale: 1;
         height: 100vh;
         width: 100vw;
@@ -110,7 +109,6 @@
         height: 100vh;
         background: linear-gradient(to bottom, #141925, #4d516b);
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        overflow: hidden;
         margin: 0;
         padding: 0;
     }
