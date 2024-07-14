@@ -1,8 +1,7 @@
 @media (max-aspect-ratio: 1919 / 1080) {
     body{
-        background-color: black;
+        background-color: #1e1e2b;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        overflow: hidden;
         scale: 1;
         height: 100vh;
         width: 100vw;
@@ -102,9 +101,8 @@
     body{
         scale: 1;
         height: 100vh;
-        background-color: black;
+        background-color: #1e1e2b;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        overflow: hidden;
         margin: 0;
         padding: 0;
     }
