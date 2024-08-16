@@ -8,7 +8,7 @@
         left: 50%;
         transform: translateX(-50%);
         top: 0;
-        height: 220vw;
+        height: 110%;
         width: 90vw;
         
         backdrop-filter: blur(3px);
@@ -23,7 +23,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 220vw;
+        top: 110%;
         height: 280vw;
         width: 90vw;
     
