@@ -34,6 +34,22 @@
         align-items: center;
         flex-direction: column;
     }
+
+    .center_{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        height: 500vw;
+        width: 90vw;
+    
+        backdrop-filter: blur(3px);
+        background-color: rgba(196, 196, 196, 0.02);
+    
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     
     .montain_img{
         height: 0;
@@ -158,6 +174,10 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    .center_{
+        display: none;
     }
     
     .montain_img{
