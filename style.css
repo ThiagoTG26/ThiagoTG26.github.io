@@ -3,6 +3,16 @@ body{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+* {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
 .tape{
     position: absolute;
     background-color: rgba(165, 42, 42, 0);
@@ -19,6 +29,7 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     gap: 5px;
     color: #fff;
     font-size: 14px;
@@ -134,7 +145,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 720px;
+    width: 420px;
     transform: translateX(-50%);
     top: 350px;
     left: 50%;
