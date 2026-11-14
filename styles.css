@@ -102,43 +102,46 @@ audio::-webkit-media-controls-panel {
     }
 
     .div_box {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         min-height: 100vh;
-        position: static;
-        transform: none;
-        padding: 24px 16px;
-        border-left: none;
-        border-right: none;
+        position: static !important;
+        transform: none !important;
+        padding: 24px 16px !important;
+        border-left: none !important;
+        border-right: none !important;
     }
 
     .song {
-        width: 100%;
-        display: grid;
-        grid-template-columns: var(--tamanho-img) 1fr; /* Coluna 1: capa | Coluna 2: textos */
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: var(--tamanho-img, 70px) 1fr;
         align-items: center;
         gap: 12px 14px;
         padding-bottom: 16px;
         margin-bottom: 0;
     }
 
+    /* Linha 1, Coluna 1: Imagem */
     .song img {
-        grid-column: 1;
-        grid-row: 1;
-        order: 0;
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        order: 0 !important;
     }
 
-    .info {
-        grid-column: 2;
-        grid-row: 1;
-        order: 0;
+    /* Linha 1, Coluna 2: h1, h3 e demais textos */
+    .song .info {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        order: 0 !important;
         min-width: 0;
     }
 
+    /* Linha 2, Largura total: Player de áudio embaixo */
     .song audio {
-        grid-column: 1 / -1;        /* Ocupa a largura inteira na linha de baixo */
-        grid-row: 2;
-        order: 0;
-        width: 100%;
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        order: 0 !important;
+        width: 100% !important;
     }
 }
