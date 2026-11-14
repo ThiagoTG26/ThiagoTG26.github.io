@@ -1,0 +1,139 @@
+:root {
+    --description: #d0f7ea;
+    --description-bad: #f7d0d0;
+}
+
+body{
+    background-color: rgb(16, 21, 27);
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+a{
+    color: rgb(187, 255, 229);
+}
+
+.div_box {
+    background-color: rgb(17, 24, 37);
+    width: 800px;
+    height: 5000px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px;           /* Cria as margens internas nas laterais */
+    box-sizing: border-box;    /* Impede que o padding aumente a largura de 70vw */
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.song {
+    --tamanho-img: 70px;            /* Altere apenas este valor para redimensionar todas as capas */
+
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;            /* Centraliza a altura da imagem em relação ao player e ao texto */
+    justify-content: flex-start;
+    gap: 20px;
+    padding-bottom: 5px;
+    margin-bottom: -20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.song img {
+    width: var(--tamanho-img);
+    height: var(--tamanho-img);
+    aspect-ratio: 1 / 1;            /* Garante a proporção quadrada */
+    object-fit: cover;              /* Preenche o quadrado sem distorcer imagens retangulares */
+    object-position: center;        /* Centraliza o recorte da imagem */
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.4);    /* Contorno externo */
+    box-sizing: border-box;
+}
+
+.song audio {
+    order: -1;                      /* Move o player para antes do .info visualmente */
+    flex-shrink: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+audio {
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color-scheme: dark; /* Deixa os ícones e o tempo brancos (e ativa o tema escuro no Firefox) */
+}
+
+/* Define a cor exata do fundo no Chrome, Edge e Safari */
+audio::-webkit-media-controls-panel {
+    background: linear-gradient(90deg, rgb(25, 44, 56), rgb(28, 40, 75));
+}
+
+.info h1,
+.info h3 {
+    margin: 0;
+}
+.info h1{
+    font-size: larger;
+    color: rgb(255, 255, 255);
+}
+.info h3{
+    font-size: medium;
+    color: rgb(227, 242, 255);
+}
+
+
+@media (max-width: 820px) {
+    body {
+        margin: 0;
+    }
+
+    .div_box {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        position: static;
+        transform: none;
+        padding: 24px 16px;
+        border-left: none;
+        border-right: none;
+    }
+
+    .song {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;            /* Permite quebrar para a linha de baixo após o player */
+        align-items: center;        /* Centraliza a imagem com a altura do texto */
+        gap: 12px;
+        padding-bottom: 16px;
+        margin-bottom: 0;
+    }
+
+    .song audio {
+        order: -1;
+        width: 100%;                /* Ocupa a linha inteira no topo */
+    }
+
+    .song img {
+        order: 0;                   /* Fica na esquerda da segunda linha */
+    }
+
+    .info {
+        order: 1;                   /* Fica logo à direita da imagem */
+        flex: 1;
+        min-width: 0;               /* Permite que títulos longos quebrem linha sem empurrar o layout */
+    }
+}
