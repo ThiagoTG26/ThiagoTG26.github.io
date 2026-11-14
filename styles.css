@@ -115,25 +115,25 @@ audio::-webkit-media-controls-panel {
     .song {
         width: 100%;
         flex-direction: row;
-        flex-wrap: wrap;            /* Permite quebrar para a linha de baixo após o player */
-        align-items: center;        /* Centraliza a imagem com a altura do texto */
+        flex-wrap: wrap;
+        align-items: center;
         gap: 12px;
         padding-bottom: 16px;
         margin-bottom: 0;
     }
 
-    .song audio {
-        order: -1;
-        width: 100%;                /* Ocupa a linha inteira no topo */
-    }
-
     .song img {
-        order: 0;                   /* Fica na esquerda da segunda linha */
+        order: 0;                   /* Esquerda da primeira linha */
     }
 
     .info {
-        order: 1;                   /* Fica logo à direita da imagem */
+        order: 1;                   /* Direita da primeira linha */
         flex: 1;
-        min-width: 0;               /* Permite que títulos longos quebrem linha sem empurrar o layout */
+        min-width: 0;
+    }
+
+    .song audio {
+        order: 2;                   /* Linha de baixo, ocupando toda a largura */
+        width: 100%;
     }
 }
