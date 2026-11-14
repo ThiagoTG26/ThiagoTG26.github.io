@@ -114,26 +114,31 @@ audio::-webkit-media-controls-panel {
 
     .song {
         width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: var(--tamanho-img) 1fr; /* Coluna 1: capa | Coluna 2: textos */
         align-items: center;
-        gap: 12px;
+        gap: 12px 14px;
         padding-bottom: 16px;
         margin-bottom: 0;
     }
 
     .song img {
-        order: 0;                   /* Esquerda da primeira linha */
+        grid-column: 1;
+        grid-row: 1;
+        order: 0;
     }
 
     .info {
-        order: 1;                   /* Direita da primeira linha */
-        flex: 1;
+        grid-column: 2;
+        grid-row: 1;
+        order: 0;
         min-width: 0;
     }
 
     .song audio {
-        order: 2;                   /* Linha de baixo, ocupando toda a largura */
+        grid-column: 1 / -1;        /* Ocupa a largura inteira na linha de baixo */
+        grid-row: 2;
+        order: 0;
         width: 100%;
     }
 }
