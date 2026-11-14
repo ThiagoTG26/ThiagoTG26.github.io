@@ -3,13 +3,13 @@
     --description-bad: #f7d0d0;
 }
 
-body{
+body {
     background-color: rgb(16, 21, 27);
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
-a{
+a {
     color: rgb(187, 255, 229);
 }
 
@@ -26,19 +26,19 @@ a{
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    padding: 40px;           /* Cria as margens internas nas laterais */
-    box-sizing: border-box;    /* Impede que o padding aumente a largura de 70vw */
+    padding: 40px;
+    box-sizing: border-box;
     border-right: 1px solid rgba(255, 255, 255, 0.4);
     border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .song {
-    --tamanho-img: 70px;            /* Altere apenas este valor para redimensionar todas as capas */
+    --tamanho-img: 70px;
 
     width: 700px;
     display: flex;
     flex-direction: row;
-    align-items: center;            /* Centraliza a altura da imagem em relação ao player e ao texto */
+    align-items: center;
     justify-content: flex-start;
     gap: 20px;
     padding-bottom: 5px;
@@ -49,17 +49,18 @@ a{
 .song img {
     width: var(--tamanho-img);
     height: var(--tamanho-img);
-    aspect-ratio: 1 / 1;            /* Garante a proporção quadrada */
-    object-fit: cover;              /* Preenche o quadrado sem distorcer imagens retangulares */
-    object-position: center;        /* Centraliza o recorte da imagem */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
     border-radius: 8px;
     flex-shrink: 0;
-    border: 2px solid rgba(255, 255, 255, 0.4);    /* Contorno externo */
+    border: 2px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
 }
 
+/* No desktop, mantém o player antes da imagem e das informações. */
 .song audio {
-    order: -1;                      /* Move o player para antes do .info visualmente */
+    order: -1;
     flex-shrink: 0;
 }
 
@@ -74,10 +75,10 @@ audio {
     height: 40px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    color-scheme: dark; /* Deixa os ícones e o tempo brancos (e ativa o tema escuro no Firefox) */
+    color-scheme: dark;
 }
 
-/* Define a cor exata do fundo no Chrome, Edge e Safari */
+/* Define a cor do painel no Chrome, Edge e Safari. */
 audio::-webkit-media-controls-panel {
     background: linear-gradient(90deg, rgb(25, 44, 56), rgb(28, 40, 75));
 }
@@ -86,15 +87,16 @@ audio::-webkit-media-controls-panel {
 .info h3 {
     margin: 0;
 }
-.info h1{
+
+.info h1 {
     font-size: larger;
     color: rgb(255, 255, 255);
 }
-.info h3{
+
+.info h3 {
     font-size: medium;
     color: rgb(227, 242, 255);
 }
-
 
 @media (max-width: 820px) {
     body {
@@ -115,33 +117,35 @@ audio::-webkit-media-controls-panel {
     .song {
         width: 100% !important;
         display: grid !important;
-        grid-template-columns: var(--tamanho-img, 70px) 1fr;
+        grid-template-columns: var(--tamanho-img, 70px) minmax(0, 1fr);
+        grid-template-areas:
+            "cover info"
+            "player player";
         align-items: center;
         gap: 12px 14px;
         padding-bottom: 16px;
         margin-bottom: 0;
     }
 
-    /* Linha 1, Coluna 1: Imagem */
-    .song img {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
+    /* Primeira linha, primeira coluna: capa. */
+    .song > img {
+        grid-area: cover;
         order: 0 !important;
     }
 
-    /* Linha 1, Coluna 2: h1, h3 e demais textos */
-    .song .info {
-        grid-column: 2 !important;
-        grid-row: 1 !important;
+    /* Primeira linha, segunda coluna: título e demais informações. */
+    .song > .info {
+        grid-area: info;
         order: 0 !important;
         min-width: 0;
     }
 
-    /* Linha 2, Largura total: Player de áudio embaixo */
-    .song audio {
-        grid-column: 1 / -1 !important;
-        grid-row: 2 !important;
+    /* Segunda linha, largura total: player abaixo da capa e das informações. */
+    .song > audio {
+        grid-area: player;
         order: 0 !important;
         width: 100% !important;
+        max-width: 100%;
+        min-width: 0;
     }
 }
